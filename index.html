@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Pembayaran</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            border-radius: 5px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Program Pembayaran</h1>
+
+        <!-- Form Tambah Pembayaran -->
+        <div class="form-group">
+            <label for="idPembayaran">ID Pembayaran:</label>
+            <input type="text" id="idPembayaran">
+        </div>
+        <div class="form-group">
+            <label for="jumlah">Jumlah Pembayaran:</label>
+            <input type="number" id="jumlah">
+        </div>
+        <div class="form-group">
+            <label for="tanggal">Tanggal Pembayaran:</label>
+            <input type="date" id="tanggal">
+        </div>
+        <div class="form-group">
+            <label for="status">Status:</label>
+            <select id="status">
+                <option value="false">Belum Dibayar</option>
+                <option value="true">Sudah Dibayar</option>
+            </select>
+        </div>
+        <button onclick="tambahPembayaranHTML()">Tambah Pembayaran</button>
+
+        <!-- Tampilkan Semua Pembayaran -->
+        <button onclick="tampilkanSemuaPembayaranHTML()">Tampilkan Semua Pembayaran</button>
+
+        <!-- Cari Pembayaran -->
+        <div class="form-group">
+            <label for="idCari">Cari Pembayaran (ID):</label>
+            <input type="text" id="idCari">
+        </div>
+        <button onclick="cariPembayaranHTML()">Cari Pembayaran</button>
+
+        <!-- Ubah Status Pembayaran -->
+        <div class="form-group">
+            <label for="idUbah">ID Pembayaran untuk Ubah Status:</label>
+            <input type="text" id="idUbah">
+        </div>
+        <div class="form-group">
+            <label for="ubahStatus">Ubah Status:</label>
+            <select id="ubahStatus">
+                <option value="false">Belum Dibayar</option>
+                <option value="true">Sudah Dibayar</option>
+            </select>
+        </div>
+        <button onclick="ubahStatusPembayaranHTML()">Ubah Status Pembayaran</button>
+
+        <div class="output" id="output"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
